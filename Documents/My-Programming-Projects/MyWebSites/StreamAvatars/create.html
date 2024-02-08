@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Website 1</title>
+</head>
+<body>
+  <button onclick="sendData()">Create Character</button>
+
+  <script>
+    function sendData() {
+      const characterName = prompt("Enter character name:");
+      if (characterName) {
+        fetch('http://localhost/StreamAvatars/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ name: characterName })
+        })
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(data => {
+          console.log('Character created:', data);
+        })
+        .catch(error => {
+          console.error('Error creating character:', error);
+        });
+      }
+    }
+  </script>
+</body>
+</html>

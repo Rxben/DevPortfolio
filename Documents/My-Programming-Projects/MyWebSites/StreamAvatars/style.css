@@ -1,0 +1,50 @@
+html{
+    margin: 0;
+    height: 100%;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    overflow: hidden; /* Hide overflowing content */
+    position: relative; /* Set position to relative for absolute positioning */
+}
+
+.char {
+    width: 44px;
+    height: 62px;
+    margin-right: 5px; 
+}
+
+.plat{
+    height: 500px;
+    bottom: -500px;
+}
+
+.person {
+    position: absolute;
+    image-rendering: pixelated;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+}
+.name{
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    max-width: 100px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.devcontrols span{
+    display: none;
+}
+
+footer{
+    user-select: none;
+    background-color: cornflowerblue;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    height: 80px;
+}
+
